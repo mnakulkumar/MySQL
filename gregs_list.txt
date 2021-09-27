@@ -26,3 +26,6 @@ VALUES
 ('Pat','patpost@breakneckpizza.net', 'Postal Worker', 'Princeton, NJ');
 
 SELECT * FROM my_contacts;
+
+
+SELECT * FROM my_contacts WHERE first_name = 'Anne';
