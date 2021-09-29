@@ -29,3 +29,36 @@ SELECT * FROM my_contacts;
 
 
 SELECT * FROM my_contacts WHERE first_name = 'Anne';
+
+
+// Backslash to escape a single quote inbetween a text in INSERT statement
+INSERT INTO my_contacts
+VALUES
+('Funyon','Steve','steve@onionflavoredrings.com', 'M', '1970-04-01', 'Punk','Grover\'s Mill,NJ','Single','smashing the state','compatriots, guitar players');
+
+SELECT * FROM my_contacts
+WHERE location = 'Grover\'s Mill,NJ';
+
+SELECT * FROM my_contacts
+WHERE location = 'Grover''s Mill,NJ';
+
+SELECT email FROM my_contacts
+WHERE profession = 'computer programmer';
+
+SELECT first_name,last_name,location
+FROM my_contacts
+WHERE birthday = '1995-07-20' ;
+
+SELECT first_name,last_name,email
+FROM my_contacts
+WHERE status = 'single'
+AND location = 'Palo Alto,CA'
+AND gender = 'F';
+
+
+SELECT first_name,last_name,email
+FROM mycontacts
+WHERE
+first_name ='Anne'
+AND 
+location = 'San Fran,CA';

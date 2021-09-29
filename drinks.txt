@@ -40,6 +40,45 @@ SELECT * FROM easy_drinks WHERE amount2 < '1';
 
 SELECT * FROM easy_drinks WHERE amount1 = '1.5';
 
+SELECT drink_name, main, second 
+FROM easy_drinks
+WHERE main = 'soda';
 
+SELECT drink_name, main, second
+FROM easy_drinks;
 
+SELECT drink_name FROM easy_drinks
+WHERE
+main = 'cherry juice';
 
+SELECT drink_name FROM easy_drinks
+WHERE
+second = 'apricot nectar';
+
+SELECT drink_name FROM easy_drinks
+WHERE
+amount2 = 7;
+
+SELECT drink_name FROM easy_drinks
+WHERE
+directions = 'serve over ice with straw';
+
+SELECT drink_name FROM easy_drinks
+WHERE
+drink_name = 'Kiss on the Lips';
+
+SELECT drink_name FROM easy_drinks
+WHERE 
+drink_name = 'Bull Frog';
+
+SELECT drink_name FROM easy_drinks
+WHERE
+main = 'iced tea';
+
+SELECT drink_name FROM easy_drinks
+WHERE
+second = 'lemonade';
+
+SELECT drink_name FROM easy_drinks
+WHERE 
+directions = 'serve over ice with lime slice';
