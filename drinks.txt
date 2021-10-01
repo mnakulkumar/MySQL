@@ -82,3 +82,10 @@ second = 'lemonade';
 SELECT drink_name FROM easy_drinks
 WHERE 
 directions = 'serve over ice with lime slice';
+
+SELECT drink_name FROM easy_drinks
+WHERE
+main = 'soda'
+AND
+amount1>1;
+

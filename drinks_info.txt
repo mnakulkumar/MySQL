@@ -1,0 +1,39 @@
+SELECT drink_name FROM dink_info
+WHERE
+cost >= 3.5
+AND
+calories < 50;
+
+SELECT cost FROM drink_info
+WHERE ice = 'Y'
+AND color = 'yellow'
+AND calories > 33;
+
+SELECT drink_name,color FROM drink_info
+WHERE carbs<=4 
+AND ice ='Y';
+
+SELECT cost FROM drink_info
+WHERE calories>=80;
+
+SELECT drink_name,color,ice FROM drink_info
+WHERE cost >3.8;
+
+//To select a drink starting with letter 'L'
+SELECT drink_name
+FROM drink_info
+WHERE
+drink_name >= 'L'
+AND
+drink_name < 'M';
+
+
+SELECT drink_name FROM easy_drinks
+WHERE main = 'cherry juice'
+OR
+second = 'cherry juice';
+
+SELECT drink_name FROM easy_drinks
+WHERE main = 'orange juice'
+OR
+main = 'apple juice';
