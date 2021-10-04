@@ -62,3 +62,19 @@ WHERE
 first_name ='Anne'
 AND 
 location = 'San Fran,CA';
+
+SELECT * FROM my_contacts
+WHERE location LIKE '%CA';
+
+SELECT * FROM my_contacts
+WHERE location LIKE '%CA';
+
+SELECT last_name FROM my_contacts
+WHERE last_name LIKE '%on';
+
+SELECT first_name FROM my_contacts
+WHERE first_name LIKE 'P%' OR first_name LIKE 'M%';
+
+
+SELECT first_name FROM my_contacts
+WHERE first_name LIKE '_i%';

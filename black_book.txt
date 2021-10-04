@@ -1,0 +1,9 @@
+SELECT date_name
+FROM black_book
+WHERE
+rating IN ('innovative','fabulous','delightful','pretty good');
+
+SELECT date_name
+FROM black_book
+WHERE
+rating NOT IN ('innovative','fabulous','delightful','pretty good');

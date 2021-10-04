@@ -89,3 +89,37 @@ main = 'soda'
 AND
 amount1>1;
 
+SELECT drink_name FROM easy_drinks WHERE amount2 BETWEEN 2 AND 6;
+
+SELECT drink_name FROM easy_drinks WHERE NOT carbs BETWEEN  3 AND 5;
+
+SELECT drink_name FROM easy_drinks
+WHERE NOT drink_name LIKE 'B%'
+AND NOT drink_name LIKE 'L%';
+
+SELECT * FROM easy_drinks
+WHERE NOT main IN ('soda', 'iced tea');
+
+SELECT * FROM easy_drinks
+WHERE NOT drink_name  IN( 'Blackthorn');\
+
+SELECT * FROM easy_drinks
+WHERE NOT main IS NULL;
+//same as
+SELECT * FROM easy_drinks
+WHERE main IS NOT NULL;
+
+SELECT * FROM easy_drinks
+WHERE NOT main = 'soda'
+AND NOT main = 'iced tea';
+
+
+//Excercise
+SELECT drink_name from easy_drinks
+WHERE amount1 >= 1.5;
+
+SELECT drink_name FROM drink_info
+WHERE calories > 0;
+
+SELECT drink_name FROM drink_info
+WHERE carbs < 3 OR carbs >5;

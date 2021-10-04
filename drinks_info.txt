@@ -9,6 +9,12 @@ WHERE ice = 'Y'
 AND color = 'yellow'
 AND calories > 33;
 
+SELECT drink_name FROM drink_info
+WHERE
+calories >=30
+AND 
+calories <=60;
+
 SELECT drink_name,color FROM drink_info
 WHERE carbs<=4 
 AND ice ='Y';
@@ -37,3 +43,21 @@ SELECT drink_name FROM easy_drinks
 WHERE main = 'orange juice'
 OR
 main = 'apple juice';
+
+SELECT drink_name FROM easy_drinks
+WHERE calories < 30 OR calories > 60;
+
+SELECT drink_name FROM easy_drinks
+WHERE drink_name  BETWEEN 'G' AND 'O';
+
+//Excercise 113
+SELECT drink_name FROM drink_info
+WHERE ice = 'N';
+
+SELECT drink_name FROM drink_info
+WHERE calories >=20;
+
+SELECT drink_name FROM  easy_drinks
+WHERE main = 'peach nectar'
+ OR
+ main = 'soda' ;
