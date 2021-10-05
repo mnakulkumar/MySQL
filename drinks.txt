@@ -121,5 +121,3 @@ WHERE amount1 >= 1.5;
 SELECT drink_name FROM drink_info
 WHERE calories > 0;
 
-SELECT drink_name FROM drink_info
-WHERE carbs < 3 OR carbs >5;

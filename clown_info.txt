@@ -1,0 +1,46 @@
+CREATE DATABASE clown;
+USE clown;
+
+CREATE TABLE clown_info
+(name VARCHAR (20),last_seen VARCHAR(40),appearance VARCHAR(50),activities VARCHAR(40));
+
+INSERT INTO clown_info
+VALUES
+('Elsie','Cherry Hill Senior Center','F, red hair, green dress, huge feet','balloons,little car'),
+('Pickles','Jack Green''s party','M, orange hair, blue suit, huge feet','mime'),
+('Snuggles','Ball-Mart','F, yellow shirt, baggy red pants','horn, umbrella'),
+('Mr. Hobo','BG Circus','M, cigar, black hair, tiny hat','violin'),
+('Clarabelle','Belmont Senior Center','F, pink hair, huge flower, blue dress','yelling, dancing'),
+('Scooter','Oakland Hospital','M, blue hair, red suit, huge nose','balloons'),
+('Zippo','Millstone Mall','F, orange suit, baggy pants','dancing'),
+('Babe','Earl''s Autos','F, all pink and sparkly','balancing,little car');
+
+INSERT INTO clown_info
+VALUES
+('Snuggles','Ball-Mart','F, yellow shirt, baggy blue pants','horn, umbrella'),
+
+INSERT INTO clown_info
+VALUES
+('Zippo', 'Millstone Mall', 'F, orange suit, baggy pants',
+'dancing, singing');
+
+INSERT INTO clown_info
+VALUES
+('Bonzo', 'Dickson Park','M, in drag, polka dotted dress','singing, dancing');
+
+INSERT INTO clown_info VALUES ('Sniffles', 'Tracy\'s','M, green and purple suit,pointy nose','climbing into tiny car');
+
+
+INSERT INTO clown_info VALUES ('Mr. Hobo', 'party for Eric Gray', 'M, cigar, black hair, tiny hat', 'violin');
+
+
+//INSERT INTO clown_info(name,appearance,activities)
+VALUES
+('Bonzo','M, in drag, polka dotted dress','singing, dancing');
+
+INSERT INTO clown_info 
+(name,last_seen,appearance)
+VALUES ('Sniffles', 'Tracy\'s','M, green and purple suit','pointy nose');
+
+
+//Excericise 

@@ -61,3 +61,6 @@ SELECT drink_name FROM  easy_drinks
 WHERE main = 'peach nectar'
  OR
  main = 'soda' ;
+
+ SELECT drink_name FROM drink_info
+WHERE carbs < 3 OR carbs >5;
