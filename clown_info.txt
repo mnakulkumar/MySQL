@@ -43,4 +43,45 @@ INSERT INTO clown_info
 VALUES ('Sniffles', 'Tracy\'s','M, green and purple suit','pointy nose');
 
 
-//Excericise 
+//Excericise  129
+
+DELETE FROM clown_info 
+WHERE activities='dancing'; 
+
+//
+INSERT INTO clown_info
+VALUES
+('Clarabelle', 'Belmont Senior Center', 'F, pink hair, huge flower, blue dress', 'dancing');
+ 
+DELETE FROM clown_info
+WHERE
+activities = 'yelling, dancing'
+AND name = 'Clarabelle';
+
+INSERT INTO clown_info
+VALUES
+('Mr. Hobo', 'Tracy\'s', 'M, cigar, black hair, tiny hat', 'violin');
+
+//Exercise 142
+
+DELETE FROM clown_info
+WHERE name = 'Mr. Hobo'
+AND last_seen <> 'Tracy\'s';
+
+DELETE FROM clown_info
+WHERE name = 'Mr. Hobo'
+AND NOT last_seen = 'Tracy\'s';
+
+
+SELECT * FROM clown_info
+WHERE
+activities = 'dancing';
+
+INSERT INTO clown_info
+VALUES
+('Clarabelle', 'Belmont Senior Center', 'F, pink hair, huge flower, blue dress', 'dancing, singing');
+
+
+DELETE FROM clown_info
+WHERE
+activities = 'dancing';
