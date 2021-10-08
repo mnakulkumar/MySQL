@@ -24,4 +24,8 @@ VALUES
 ('Duncan''s Donuts', '190300', '20210426', 'jelly', 7, 'not enough jelly');
 
 
-INSERT INTO
+UPDATE doughnut_ratings
+SET
+type = 'glazed'
+WHERE type = 'plain glazed';
+
