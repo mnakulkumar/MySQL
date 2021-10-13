@@ -78,3 +78,15 @@ WHERE first_name LIKE 'P%' OR first_name LIKE 'M%';
 
 SELECT first_name FROM my_contacts
 WHERE first_name LIKE '_i%';
+
+ALTER TABLE my_contacts
+ADD COLUMN contact_id INT NOT NULL AUTO_INCREMENT FIRST,
+ADD PRIMARY KEY(contact_id);
+
+//EXcercise 199
+ALTER TABLE my_contacts
+ADD COLUMN phone INT(10);
+
+ALTER TABLE my_contacts
+ADD COLUMN phone INT(10) AFTER first_name;
+
