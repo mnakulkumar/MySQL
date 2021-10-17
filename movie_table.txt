@@ -85,3 +85,25 @@ DROP COLUMN gore,
 DROP COLUMN scifi,
 DROP COLUMN for_kids,
 DROP COLUMN cartoon;
+
+
+SELECT title, category
+FROM movie_table
+WHERE title LIKE 'A%'
+AND
+category = 'family';
+
+
+INSERT INTO movie_table
+VALUES
+('Annoying Adults', 'G', 'family'),
+('Alex Needs a Bath', 'G', 'family'),
+('Aaargh! 2', 'G', 'family'),
+('Another March of the Penguins','G', 'family'),
+('Anyone Can Grow Up', 'G', 'family'),
+('Aaargh!','G','family'),
+('Airplanes and Helicopters', 'G', 'family'),
+('Are You Paying Attention?', 'G', 'family'),
+('Acting Up', 'G', 'family');
+
+
