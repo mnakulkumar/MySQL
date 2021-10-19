@@ -107,3 +107,20 @@ VALUES
 ('Acting Up', 'G', 'family');
 
 
+SELECT title,category
+FROM movie_table
+ORDER BY title,category;
+
+SELECT category,title
+FROM movie_table
+ORDER BY category,title;
+
+SELECT title, category, purchased
+FROM movie_table
+ORDER BY category,purchased;
+
+SELECT * FROM movie_table
+ORDER BY category, purchased, title;
+
+SELECT * FROM movie_table
+ORDER BY category DESC ,title;
