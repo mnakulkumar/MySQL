@@ -115,3 +115,114 @@ SELECT LENGTH('San Antonio, TX ');
 
 UPDATE my_contacts
 SET state = RIGHT(location,2);
+
+
+//Exercise 283
+
+SELECT * FROM my_contacts
+WHERE
+interests LIKE 'animals,%'
+AND
+gender = 'F'
+AND 
+status = 'single';
+
+INSERT INTO my_contacts
+VALUES
+(5, 'Fiore', 'Carla', '5557894855', 'cfiore@fioreanimalclinic.com', 'F', '1974-01-07', 'Veterinarian', 'Round Rock, TX', 'single', 'horseback riding, movies, animals, mystery novels, hiking', 'single M', 'Round Rock', 'TX');
+
+
+SELECT * FROM my_contacts
+WHERE gender ='F'
+AND status = 'single'
+AND state = 'TX'
+AND seeking LIKE '%single M%'
+AND birthday > '1970-08-08'
+AND birthday < '1980-08-08'
+AND interests LIKE '%animals%'
+AND interests LIKE '%horse%'
+AND interests LIKE '%movies%';
+
+
+SELECT * FROM my_contacts
+WHERE gender = 'F'
+AND status = 'single'
+AND state = 'MA'
+AND seeking LIKE '%single M%'
+AND birthday > '1950-03-20'
+AND birthday < '1960-03-20'
+AND SUBSTRING_INDEX(interests, ',', 1) = 'animals';
+
+
+INSERT INTO my_contacts
+VALUES
+(6, 'Ferguson', 'Alexis', '5550983476', 'alexangel@yahoo.com', 'F', '1956-09-19', 'Artist', 'Pflugerville, MA', 'single',
+'animals', 'single M', 'Pflugerville', 'MA');
+
+
+ALTER TABLE my_contacts
+DROP COLUMN location;
+
+ALTER TABLE my_contacts
+MODIFY COLUMN city VARCHAR(50) AFTER location,
+MODIFY COLUMN state CHAR(2) AFTER city;
+
+ALTER TABLE my_contacts
+ADD COLUMN interest1 VARCHAR(50) AFTER status,
+ADD COLUMN interest2 VARCHAR(50) AFTER interest1,
+ADD COLUMN interest3 VARCHAR(50) AFTER interest2,
+ADD COLUMN interest4 VARCHAR(50) AFTER interest3;
+
+
+UPDATE my_contacts
+SET interest1 = SUBSTRING_INDEX(interests, ',', 1);
+UPDATE my_contacts
+SET interests = TRIM(RIGHT(interests, (LENGTH(interests)-LENGTH(interest1)-1)));
+
+UPDATE my_contacts
+SET interest2 = SUBSTRING_INDEX(interests, ',', 1);
+
+UPDATE my_contacts
+SET interests = TRIM(RIGHT(interests, (LENGTH(interests)-LENGTH(interest2)-1)));
+
+UPDATE my_contacts
+SET interest3 = SUBSTRING_INDEX(interests, ',',1);
+
+UPDATE my_contacts
+SET interests = TRIM(RIGHT(interests, (LENGTH(interests)-LENGTH(interest3)-1)));
+
+UPDATE my_contacts
+SET interest4 = SUBSTRING_INDEX(interests, ',', 1);
+
+ALTER TABLE my_contacts
+DROP interests;
+
+SELECT * FROM my_contacts
+WHERE gender = 'F'
+AND status = 'single'
+AND state = 'MA'
+AND seeking LIKE '%single M%'
+AND birthday > '1950-03-20'
+AND birthday < '1960-03-20'
+AND 
+(
+interest1 = 'animals'
+OR interest2= 'animals'
+OR interest3 = 'animals'
+OR interest4 = 'animals'
+)
+AND
+(
+interest1='trading cards'
+OR interest2 ='trading cards'
+OR interest3 = 'trading cards'
+OR interest4 = 'trading cards'
+)
+AND 
+(
+interest1 = 'geocaching'
+OR interest2 = 'geocaching'
+OR interest3 = 'geocaching'
+OR interest4 = 'geocaching'
+);
+
