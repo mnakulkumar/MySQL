@@ -253,3 +253,89 @@ interests = SUBSTR(interests, LENGTH(interest3)+2),
 interest4 = interests;
 
 SELECT interest1, interest2, interest3, interest4 FROM my_contacts;
+
+ALTER TABLE my_contacts
+ADD COLUMN prof_id INT  AFTER birthday;
+
+// Adding FOREIGN KEY 
+
+ALTER TABLE my_contacts
+ADD CONSTRAINT profession_id_fk
+FOREIGN KEY(prof_id)
+REFERENCES profession(prof_id);
+
+// Excercise 365
+
+SELECT mc.email, p.profession
+FROM my_contacts AS mc
+	INNER JOIN
+	profession AS p
+ON mc.prof_id = p.prof_id;
+
+
+SELECT mc.first_name, mc.last_name, s.status 
+FROM my_contacts AS mc
+	INNER JOIN
+	status AS s
+ON mc.status_id = s.status_id;
+
+SELECT mc.first_name, mc.last_name, z.state
+FROM my_contacts AS mc
+	INNER JOIN
+	zip_code AS z
+ON mc.zip_code = z.zip_code;
+
+
+//Excercise pg-369
+
+SELECT mc.email, p.profession 
+FROM my_contacts AS mc
+	NATURAL JOIN
+	profession AS p;
+
+SELECT mc.first_name, mc.last_name , s.status
+	FROM my_contacts AS mc
+	INNER JOIN
+	status AS s
+ON mc.status_id <> s.status_id;
+
+SELECT mc.first_name, mc.last_name , z.state
+	FROM my_contacts AS mc
+	NATURAL JOIN
+	zip_code AS Z
+
+
+//Excercise 373
+
+SELECT mc.first_name, mc.last_name, ci.interest_id
+FROM my_contacts AS mc
+	INNER JOIN
+	contact_interest AS ci
+ON mc.contact_id = ci.contact_id;
+
+SELECT mc.first_name, mc.last_name, ci.interest_id
+FROM my_contacts AS mc
+	NATURAL JOIN
+	contact_interest AS ci
+
+
+SELECT cs.contact_id, cs.seeking_id,  s.seeking_id, s.seeking_id, s.seeking
+FROM contact_seeking AS cs
+	CROSS JOIN
+	seeking AS s;
+
+SELECT p.profession 
+FROM my_contacts AS mc
+	INNER JOIN
+	profession AS p
+ON mc.prof_id = p.prof_id
+GROUP BY p.profession
+ORDER BY p.profession;
+
+
+
+
+
+
+
+
