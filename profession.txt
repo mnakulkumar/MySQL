@@ -45,4 +45,25 @@ mc_prof varchar(20)
 	GROUP BY mc_prof
 	ORDER BY mc_prof;
 
+// Table ALIAS
 
+SELECT profession AS mc_prof
+FROM my_contacts AS mc
+GROUP BY mc_prof
+ORDER BY mc_prof;
+ 
+// Table ALIAS without 'AS'
+
+SELECT profession mc_prof
+FROM my_contacts mc
+GROUP BY mc_prof
+ORDER BY mc_prof;
+
+
+SELECT p1.profession, p2.profession
+FROM profession AS p1
+	CROSS JOIN
+	profession AS p2; 
+
+ALTER TABLE profession
+CHANGE COLUMN id prof_id  INT AUTO_INCREMENT;

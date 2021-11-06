@@ -1,0 +1,7 @@
+SELECT mc.first_name, mc.last_name, mc.phone
+FROM my_contacts AS mc
+	NATURAL JOIN
+	job_desired AS jd
+ WHERE jd.title ="Web Developer"
+ AND jd.salary_low < 105000
+ AND jd.years_exp >= 5;

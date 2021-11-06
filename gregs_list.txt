@@ -316,21 +316,21 @@ ON mc.contact_id = ci.contact_id;
 SELECT mc.first_name, mc.last_name, ci.interest_id
 FROM my_contacts AS mc
 	NATURAL JOIN
-	contact_interest AS ci
+	contact_interest AS ci;
 
 
-SELECT cs.contact_id, cs.seeking_id,  s.seeking_id, s.seeking_id, s.seeking
-FROM contact_seeking AS cs
+SELECT *
+FROM contact_seeking 
 	CROSS JOIN
-	seeking AS s;
+	seeking; // Or // SELECT * FROM contact_seeking, seeking;
 
 SELECT p.profession 
 FROM my_contacts AS mc
 	INNER JOIN
 	profession AS p
 ON mc.prof_id = p.prof_id
-GROUP BY p.profession
-ORDER BY p.profession;
+GROUP BY profession
+ORDER BY profession;
 
 
 
