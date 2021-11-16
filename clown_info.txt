@@ -119,3 +119,14 @@ WHERE name = 'Sniffles;
 UPDATE clown_info
 SET last_seen ='Eric Gray\'s Party'
 WHERE name = 'Mr. Hobo';
+
+
+//Excercise 433
+
+SELECT c1.name AS clown_name, c2.name AS boss
+FROM clown_info1 AS c1
+	INNER JOIN
+	clown_info2 AS c2
+ON c1.boss_id = c2.id;
+
+

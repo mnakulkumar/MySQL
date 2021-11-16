@@ -78,3 +78,27 @@ AND
 NOT EXISTS
 (SELECT * FROM job_current AS jc
 WHERE mc.contact_id = jc.contact_id);
+
+//Exercise 441
+
+SELECT contact_id FROM job_current
+UNION 
+SELECT salary FROM job_listings;
+
+CREATE TABLE my_table AS
+SELECT contact_id FROM job_current
+UNION
+SELECT salary FROM job_listings;
+
+
+//Excercise 463
+
+SELECT mc.first_name, mc.last_name, mc.phone, mc.email
+FROM my_contacts AS mc 
+    NATURAL JOIN
+job_desired AS jd
+WHERE jd.title = 'Web Designer';
+
+SELECT job_id, salary, zip
+FROM job_listings 
+WHERE title = 'Technical Writer';

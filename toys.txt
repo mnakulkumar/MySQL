@@ -37,7 +37,7 @@ VALUES
 SELECT g.girl, t.toy
 FROM toys AS t
 LEFT OUTER JOIN girls AS g
-ON g.toy_id = t.toy_id;
+ON g.toy_id = t.toy_id; 
 
 SELECT g.girl, t.toy
 FROM girls AS g
@@ -48,13 +48,27 @@ ON g.toy_id = t.toy_id;
 //Exercise 423
 
 SELECT g.girl, t.toy
-FROM girl AS g
+FROM girls AS g
 	LEFT OUTER JOIN
 toys AS t
-ON g.toy_id = t.toy_id;
+ON g.toy_id = t.toy_id; //same results as next query , Girls is LEFT TABLE & Toys is RIGHT table
 
 SELECT g.girl, t.toy
-FROM toy AS t
+FROM toys AS t
+	RIGHT OUTER JOIN
+girls AS g
+ON g.toy_id = t.toy_id; // same as above , Girls is LEFT TABLE & Toys is RIGHT table
+
+SELECT g.girl, t.toy
+FROM toys AS t
 	LEFT OUTER JOIN
-girl AS g
-ON t.toy_id = g.toy_id;
+girls AS g
+ON g.toy_id = t.toy_id; // same as next query as TOYS IS LEFT TABLE AND girls is RIGHT TABLE
+
+
+
+SELECT g.girl
+FROM girls AS g
+	RIGHT OUTER JOIN
+girls AS g
+ON g.toy_id = t.toy_id;  // toy is LEFT TABLE and girls is RIGHT table
