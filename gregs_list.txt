@@ -226,6 +226,10 @@ OR interest3 = 'geocaching'
 OR interest4 = 'geocaching'
 );
 
+
+
+
+
 SELECT status FROM my_contacts
 GROUP BY status
 ORDER BY status;
@@ -335,6 +339,17 @@ ORDER BY profession;
 
 
 
+SELECT COUNT(*) AS Females  FROM my_contacts WHERE gender = 'F';
+
+SELECT COUNT(*) AS Males FROM my_contacts WHERE gender = 'M';
+
+SELECT COUNT(*) AS Total FROM my_contacts;
+
+
+SELECT gender 
+FROM my_contacts
+WHERE gender <> 'M'
+AND gender <> 'F';
 
 
 

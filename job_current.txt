@@ -99,6 +99,19 @@ FROM my_contacts AS mc
 job_desired AS jd
 WHERE jd.title = 'Web Designer';
 
-SELECT job_id, salary, zip
+SELECT title, salary, description, zip
 FROM job_listings 
 WHERE title = 'Technical Writer';
+
+//Exercise 469
+
+
+CREATE VIEW job_raises AS
+SELECT mc.first_name, mc.last_name, mc.email, mc.phone, jc.contact_id, jc.salary, jd.salary_low, jd.salary_low - jc.salary AS raise
+FROM job_current AS jc
+    INNER JOIN
+    job_desired AS jd
+    INNER JOIN
+    my_contacts AS mc
+    WHERE jc.contact_id = jd.contact_id
+    AND jc.contact_id = mc.contact_id;
