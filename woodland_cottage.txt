@@ -1,0 +1,16 @@
+GRANT SELECT ON 
+chores
+to Doc;
+
+GRANT DELETE ON
+talking_animals
+to Sleepy
+WITH GRANT OPTION;
+
+GRANT ALL ON
+chores
+to ALL;
+
+GRANT SELECT ON
+woodland_cottage.*
+TO doc;
