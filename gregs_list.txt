@@ -351,6 +351,35 @@ FROM my_contacts
 WHERE gender <> 'M'
 AND gender <> 'F';
 
+//Exercise 517
+
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('wasd1321!#');
+
+CREATE USER frank
+IDENTIFIED BY '$abc123';
+
+CREATE USER jim
+IDENTIFIED BY '$efg456';
+
+CREATE USER joe
+IDENTIFIED BY '$lmn789';
+
+GRANT DELETE ON
+job_listings
+TO frank;
+
+GRANT SELECT ON
+my_contacts.*
+TO frank;
+
+GRANT SELECT, INSERT ON
+gregs_list.*
+TO jim;
+
+GRANT SELECT ON
+my_contacts, profession, zip_code, status, contact_interest, interests, contact_seeking, seeking
+TO joe;
+
 
 
 
